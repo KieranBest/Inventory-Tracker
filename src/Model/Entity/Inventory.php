@@ -16,5 +16,6 @@ class Inventory extends Entity
         'status' => true,
         'slug' => true,
         'last_updated' => true,
+        'deleted' => true,
     ];
 }
