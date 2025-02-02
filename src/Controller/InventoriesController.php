@@ -10,9 +10,10 @@ class InventoriesController extends AppController
         $this->set(compact('inventories'));
     }
 
-    public function view($id = null)
+    public function view($slug = null)
     {
-        $inventory = $this->Inventories->findById($id)->firstOrFail();
+        // Is it better to view by slug or view by ID?
+        $inventory = $this->Inventories->findBySlug($slug)->firstOrFail();
         $this->set(compact('inventory'));
     }
 
@@ -54,9 +55,8 @@ class InventoriesController extends AppController
         $this->request->allowMethod(['post', 'delete']);
 
         $inventory = $this->Inventories->findBySlug($slug)->firstOrFail();
-        $inventory->deleted = 'TRUE';
-        if ($inventory->deleted) {
-            $this->Flash->success(__('The {0} article has been deleted.', $inventory->name));
+        if ($this->Inventories->delete($inventory)) {
+            $this->Flash->success(__('The {0} item has been deleted.', $inventory->name));
 
             return $this->redirect(['action' => 'index']);
         }

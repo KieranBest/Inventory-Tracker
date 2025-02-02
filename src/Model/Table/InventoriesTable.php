@@ -19,6 +19,7 @@ class InventoriesTable extends Table
                 ]
             ]
         ]);
+        $this->addBehavior('Muffin/Trash.Trash');
     }
 
     public function validationDefault(Validator $validator): Validator
@@ -107,7 +108,6 @@ class InventoriesTable extends Table
         if ($entity->isNew() && !$entity->slug) {
             $sluggedName = Text::slug($entity->name);
             $entity->slug = substr($sluggedName, 0, 191);
-            $entity->deleted = 0;
         }
     }
 }

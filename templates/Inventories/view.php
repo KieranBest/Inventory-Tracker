@@ -9,5 +9,5 @@
         Status: <?= $inventory->status ?>
     </small>
 </p>
-<p><?= $this->Html->link('Edit', ['action' => 'edit', $inventory->id]) ?></p>
+<p><?= $this->Html->link('Edit', ['action' => 'edit', $inventory->slug]) ?></p>
 

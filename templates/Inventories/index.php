@@ -14,7 +14,7 @@
     <?php foreach ($inventories as $inventory): ?>
     <tr>
         <td>
-            <?= $this->Html->link($inventory->name, ['action' => 'view', $inventory->id]) ?>
+            <?= $this->Html->link($inventory->name, ['action' => 'view', $inventory->slug]) ?>
         </td>
         <td>
             <?= $inventory->price ?>
