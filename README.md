@@ -14,6 +14,6 @@ There are various rules against inventory such as the following:
 - Products with a price > 100 must have a minimum quantity of 10.
 - Products with a name containing "promo" must have a price < 50.
 - Stock levels: determined by the quantity such as:
-- - In stock: Quantity > 10.
-- - Low stock: Quantity between 1 and 10.
-- - Out of stock: Quantity = 0.
+  - In stock: Quantity > 10.
+  - Low stock: Quantity between 1 and 10.
+  - Out of stock: Quantity = 0.
