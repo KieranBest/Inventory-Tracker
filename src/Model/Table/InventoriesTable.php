@@ -102,7 +102,7 @@ class InventoriesTable extends Table
     public function beforeSave(EventInterface $event, $entity, $options)
     {
         if ($entity->isNew() && !$entity->slug) {
-            $sluggedName = Text::slug($entity->name);
+            $sluggedName = Text::slug($entity->name) . time();
             $entity->slug = substr($sluggedName, 0, 191);
         }
     }
