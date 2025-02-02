@@ -9,5 +9,14 @@
         Last Updated: <?= $inventory->last_updated ?>
     </small>
 </p>
-<p><?= $this->Html->link('Edit', ['action' => 'edit', $inventory->slug]) ?></p>
-
+<p>
+    <?= $this->Html->link('Edit',
+        ['action' => 'edit', $inventory->slug])
+    ?>
+</p>
+<p>
+    <?= $this->Form->postLink('Delete',
+        ['action' => 'delete', $inventory->slug],
+        ['confirm' => 'Are you sure?'])
+    ?>
+</p>

@@ -26,10 +26,6 @@ class InventoriesTable extends Table
     {
         $validator
             // name: Required, unique, must be between 3 and 50 characters.
-            //
-            ->notEmptyString('name')
-            // ->add('name', 'length', ['rule' => ['lengthBetween', 3, 50]])
-            // this does not allow a custom message
             ->minLength('name', 3)
             ->maxLength('name', 50)
 
