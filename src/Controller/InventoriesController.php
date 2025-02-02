@@ -6,8 +6,19 @@ class InventoriesController extends AppController
 {
     public function index()
     {
-        $inventories = $this->paginate($this->Inventories);
+        $search = $this->request->getQuery('search');
+        if ($search) {
+            $query = $this->Inventories->find('all')
+                ->where([['name like'=>'%'.$search.'%']]);
+        } else {
+            $query = $this->Inventories;
+        }
+        $inventories = $this->paginate($query);
         $this->set(compact('inventories'));
+
+
+        // $inventories = $this->paginate($this->Inventories);
+        // $this->set(compact('inventories'));
     }
 
     public function view($slug = null)
@@ -60,5 +71,18 @@ class InventoriesController extends AppController
 
             return $this->redirect(['action' => 'index']);
         }
+    }
+
+    public function search() {
+        $data = $this->request->getData();
+
+        $data = array_filter(array_map('trim', $data));
+
+        $url = [
+            'action' => 'index',
+            '?' => $data
+        ];
+
+        return $this->redirect($url);
     }
 }

@@ -1,5 +1,10 @@
 <h1>Inventories</h1>
 
+<?= $this->Form->create(null, ['url' => ['action' => 'search']]) ?>
+<?= $this->Form->control('search') ?>
+<?= $this->Form->submit('Search') ?>
+<?= $this->Form->end() ?>
+
 <?= $this->Html->link('Add Item', ['action' => 'add']) ?>
 
 <table>
@@ -9,6 +14,7 @@
         <th>Quantity</th>
         <th>Stock</th>
         <th>Last Updated</th>
+        <th>Actions</th>
     </tr>
 
     <?php foreach ($inventories as $inventory): ?>
