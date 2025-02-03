@@ -17,3 +17,4 @@ There are various rules against inventory such as the following:
   - In stock: Quantity > 10.
   - Low stock: Quantity between 1 and 10.
   - Out of stock: Quantity = 0.
+- `last_updated` field is to be updated upon modification
