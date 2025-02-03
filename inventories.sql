@@ -3,14 +3,14 @@ CREATE DATABASE inventory_tracker_db;
 USE inventory_tracker_db;
 
 CREATE TABLE inventories (
-  	id INT AUTO_INCREMENT PRIMARY KEY,
-  	name VARCHAR(255) NOT NULL,
-  	quantity INT NOT NULL,
-  	price DECIMAL(10,2) NOT NULL,
-  	slug VARCHAR(191) NOT NULL,
-  	last_updated DATETIME DEFAULT current_timestamp(),
-  	status TEXT NOT NULL,
-  	deleted DATETIME DEFAULT NULL,
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    quantity INT NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    slug VARCHAR(191) NOT NULL,
+    last_updated DATETIME DEFAULT current_timestamp(),
+    status TEXT NOT NULL,
+    deleted DATETIME DEFAULT NULL,
     UNIQUE KEY (slug)
 );
 
