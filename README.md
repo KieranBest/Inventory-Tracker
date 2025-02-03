@@ -18,3 +18,7 @@ There are various rules against inventory such as the following:
   - Low stock: Quantity between 1 and 10.
   - Out of stock: Quantity = 0.
 - `last_updated` field is to be updated upon modification
+
+## Usage
+
+Using XAMPP to locally host the application and database, go to the following in your command prompt `xampp\htdocs\cakephp\Inventory-Tracker` and use `bin\cake server` to run locally. Following the local host link and you should see all sections with a green hat. Head over to `http://localhost/phpmyadmin/index.php` and start a SQL query, copy the contents of the file `inventories.sql` into the SQL query and this will generate a table and database and fill it with example content.
